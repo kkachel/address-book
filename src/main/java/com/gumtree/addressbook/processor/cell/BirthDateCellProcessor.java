@@ -1,6 +1,7 @@
 package com.gumtree.addressbook.processor.cell;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import org.supercsv.cellprocessor.CellProcessorAdaptor;
 import org.supercsv.cellprocessor.ParseDate;
@@ -13,6 +14,7 @@ import org.supercsv.cellprocessor.constraint.NotNull;
  * @author Krzysztof Kachel
  */
 @Component
+@Order(value=3)
 public class BirthDateCellProcessor implements CellProcessorAdapter {
 
     @Value("${file.cell.date.format}")
