@@ -11,6 +11,8 @@ public interface PersonProcessor {
 
     public void process(Person person);
 
+    public String getResultMessage();
+
     public void reset();
 
 }

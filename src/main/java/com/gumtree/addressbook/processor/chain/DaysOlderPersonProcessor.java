@@ -1,6 +1,8 @@
 package com.gumtree.addressbook.processor.chain;
 
 import com.gumtree.addressbook.domain.Person;
+import org.joda.time.DateTime;
+import org.joda.time.Days;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -14,6 +16,9 @@ import org.springframework.stereotype.Component;
 @Component
 @Order(value=3)
 public class DaysOlderPersonProcessor implements PersonProcessor {
+
+    @Value("${days.older.person.template}")
+    private String template;
 
     @Value("${days.older.person.name1}")
     private String personName1;
@@ -32,6 +37,19 @@ public class DaysOlderPersonProcessor implements PersonProcessor {
             person1 = person;
         } else if(person2 == null && name.contains(personName2)) {
             person2 = person;
+        }
+    }
+
+    @Override
+    public String getResultMessage() {
+        DateTime date1 = new DateTime(person1.getBirthDate());
+        DateTime date2 = new DateTime(person2.getBirthDate());
+        if(date1.isBefore(date2)) {
+            int days = Days.daysBetween(date1, date2).getDays();
+            return String.format(template, person1.getName(), days, person2.getName());
+        } else {
+            int days = Days.daysBetween(date2, date1).getDays();
+            return String.format(template, person2.getName(), days, person1.getName());
         }
     }
 
