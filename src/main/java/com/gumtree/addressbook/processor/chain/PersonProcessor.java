@@ -11,4 +11,6 @@ public interface PersonProcessor {
 
     public void process(Person person);
 
+    public void reset();
+
 }

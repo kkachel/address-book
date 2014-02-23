@@ -33,6 +33,12 @@ public class DaysOlderPersonProcessor implements PersonProcessor {
         }
     }
 
+    @Override
+    public void reset() {
+        person1 = null;
+        person2 = null;
+    }
+
     public Person getPerson1() {
         return person1;
     }

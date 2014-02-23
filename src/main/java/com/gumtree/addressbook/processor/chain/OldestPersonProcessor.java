@@ -23,6 +23,11 @@ public class OldestPersonProcessor implements PersonProcessor {
         }
     }
 
+    @Override
+    public void reset() {
+        oldestPerson = null;
+    }
+
     public Person getOldestPerson() {
         return oldestPerson;
     }

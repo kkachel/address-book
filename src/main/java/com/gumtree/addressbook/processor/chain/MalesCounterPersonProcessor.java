@@ -22,6 +22,11 @@ public class MalesCounterPersonProcessor implements PersonProcessor {
         }
     }
 
+    @Override
+    public void reset() {
+        count = 0;
+    }
+
     public int getCount() {
         return count;
     }
