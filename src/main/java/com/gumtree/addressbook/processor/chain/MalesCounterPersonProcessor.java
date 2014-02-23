@@ -2,6 +2,7 @@ package com.gumtree.addressbook.processor.chain;
 
 import com.gumtree.addressbook.domain.Gender;
 import com.gumtree.addressbook.domain.Person;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 /**
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Component;
  * @author Krzysztof Kachel
  */
 @Component
+@Order(value=1)
 public class MalesCounterPersonProcessor implements PersonProcessor {
 
     private int count = 0;
