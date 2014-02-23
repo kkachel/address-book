@@ -1,6 +1,7 @@
 package com.gumtree.addressbook.processor.chain;
 
 import com.gumtree.addressbook.domain.Person;
+import org.springframework.stereotype.Component;
 
 /**
  * Process {@link Person} objects.
@@ -8,6 +9,7 @@ import com.gumtree.addressbook.domain.Person;
  *
  * @author Krzysztof Kachel
  */
+@Component
 public class OldestPersonProcessor implements PersonProcessor {
 
     private Person oldestPerson;

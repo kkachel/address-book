@@ -2,6 +2,7 @@ package com.gumtree.addressbook.processor.cell;
 
 import com.google.common.collect.ImmutableMap;
 import com.gumtree.addressbook.domain.Gender;
+import org.springframework.stereotype.Component;
 import org.supercsv.cellprocessor.CellProcessorAdaptor;
 import org.supercsv.cellprocessor.HashMapper;
 import org.supercsv.cellprocessor.Trim;
@@ -14,6 +15,7 @@ import java.util.Map;
  *
  * @author Krzysztof Kachel
  */
+@Component
 public class GenderCellProcessor implements CellProcessorAdapter {
 
     public CellProcessorAdaptor getProcessor() {

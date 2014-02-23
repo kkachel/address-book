@@ -2,6 +2,7 @@ package com.gumtree.addressbook.processor.chain;
 
 import com.gumtree.addressbook.domain.Person;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 /**
  * Process {@link Person} objects.
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
  *
  * @author Krzysztof Kachel
  */
+@Component
 public class DaysOlderPersonProcessor implements PersonProcessor {
 
     @Value("${days.older.person.name1}")
