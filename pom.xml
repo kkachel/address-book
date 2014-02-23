@@ -12,6 +12,7 @@
 
     <properties>
         <springframework.version>4.0.1.RELEASE</springframework.version>
+        <supercsv.version>2.1.0</supercsv.version>
         <slf4j.version>1.7.5</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
     </properties>
@@ -28,6 +29,13 @@
                     <artifactId>commons-logging</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <!-- Utils -->
+        <dependency>
+            <groupId>net.sf.supercsv</groupId>
+            <artifactId>super-csv</artifactId>
+            <version>${supercsv.version}</version>
         </dependency>
 
         <!-- Logging -->
