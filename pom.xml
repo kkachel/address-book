@@ -13,6 +13,7 @@
     <properties>
         <springframework.version>4.0.1.RELEASE</springframework.version>
         <supercsv.version>2.1.0</supercsv.version>
+        <guava.version>16.0.1</guava.version>
         <slf4j.version>1.7.5</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
     </properties>
@@ -36,6 +37,11 @@
             <groupId>net.sf.supercsv</groupId>
             <artifactId>super-csv</artifactId>
             <version>${supercsv.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
         </dependency>
 
         <!-- Logging -->
