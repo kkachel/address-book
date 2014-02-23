@@ -16,9 +16,11 @@
         <guava.version>16.0.1</guava.version>
         <slf4j.version>1.7.5</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
+        <junit.version>4.11</junit.version>
     </properties>
 
     <dependencies>
+
         <!-- Spring -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -88,6 +90,21 @@
             <artifactId>apache-log4j-extras</artifactId>
             <version>${log4j.version}</version>
         </dependency>
+
+        <!-- Test -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${springframework.version}</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
 </project>
