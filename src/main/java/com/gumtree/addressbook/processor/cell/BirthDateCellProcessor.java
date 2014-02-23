@@ -13,8 +13,11 @@ import org.supercsv.cellprocessor.constraint.NotNull;
  */
 public class BirthDateCellProcessor implements CellProcessorAdapter {
 
+    @Value("${file.cell.date.format}")
+    private String dateFormat;
+
     public CellProcessorAdaptor getProcessor() {
-        return new NotNull(new Trim(new ParseDate("dd/MM/yy")));
+        return new NotNull(new Trim(new ParseDate(dateFormat)));
     }
 
 }
