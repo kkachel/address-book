@@ -39,6 +39,11 @@ public class AddressBookReader {
     @Value("${file.cell.to.person.mapping}")
     private String[] mapping;
 
+    /**
+     * Reads {@link Person} objects from file and process them using chain of {@link PersonProcessor}.
+     *
+     * @throws IOException
+     */
     public void read() throws IOException {
         ICsvBeanReader beanReader = null;
         try {
@@ -55,6 +60,15 @@ public class AddressBookReader {
             if( beanReader != null ) {
                 beanReader.close();
             }
+        }
+    }
+
+    /**
+     * Display results to console.
+     */
+    public void showResults() {
+        for(PersonProcessor processor: personProcessors) {
+            System.out.println(processor.getResultMessage());
         }
     }
 

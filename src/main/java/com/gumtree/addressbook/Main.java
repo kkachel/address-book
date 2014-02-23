@@ -21,6 +21,7 @@ public class Main {
             ApplicationContext context = new ClassPathXmlApplicationContext("context/application-context.xml");
             AddressBookReader addressBookReader = (AddressBookReader) context.getBean("addressBookReader");
             addressBookReader.read();
+            addressBookReader.showResults();
         } catch(Exception e) {
             LOG.error("Error during main execution", e);
         }
